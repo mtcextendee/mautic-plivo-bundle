@@ -1,0 +1,8 @@
+{
+  "name": "kuzmany/mautic-plivo-bundle",
+  "type": "mautic-plugin",
+  "require": {
+    "mautic/composer-plugin": "^1.0",
+    "plivo/php-sdk": "^4.1.5"
+  }
+}
