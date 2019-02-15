@@ -1,5 +1,5 @@
 {
-  "name": "kuzmany/mautic-plivo-bundle",
+  "name": "mtcextendee/mautic-plivo-bundle",
   "type": "mautic-plugin",
   "require": {
     "mautic/composer-plugin": "^1.0",
