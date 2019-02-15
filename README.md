@@ -1,6 +1,12 @@
-# Mautic HindIt Plugin
-HindIt SMS Transport Integration for >= Mautic 2.13
+# Mautic Plivo Plugin
 
-## Install
+Plivo SMS Transport Integration for >= Mautic 2.13 https://www.plivo.com/
 
-composer require kuzmany/mautic-hindit-bundle
+More plugin from Mautic Extendee Family  https://mtcextendee.com/plugins
+Buy Mautic themes https://mtcextendee.com/themes
+
+## Installation
+
+composer require mtcextendee/mautic-plivo-bundle
+
+
