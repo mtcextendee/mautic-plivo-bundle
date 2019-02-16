@@ -83,7 +83,7 @@ class PlivoApi extends AbstractSmsApi
 
         $integration = $this->integrationHelper->getIntegrationObject('Plivo');
         if ($integration && $integration->getIntegrationSettings()->getIsPublished()) {
-            $data = $integration->getDecryptedApiKeys();
+            $data   = $integration->getDecryptedApiKeys();
             $client = new RestClient($data['AUTH_ID'], $data['AUTH_TOKEN']);
             try {
                 $response = $client->messages->create(
@@ -91,9 +91,16 @@ class PlivoApi extends AbstractSmsApi
                     [$contact->getMobile()],
                     $content
                 );
+
                 return true;
             } catch (PlivoRestException $ex) {
-                return $ex->getErrorMessage();
+                if (method_exists($ex, 'getErrorMessage')) {
+                    return $ex->getErrorMessage();
+                } elseif (!empty($ex->getMessage())) {
+                    return $ex->getMessage();
+                }
+
+                return false;
             }
         }
     }
