@@ -10,6 +10,10 @@
  */
 
 return [
+    'name'        => 'Plivo',
+    'description' => 'Plivo Sms integration',
+    'author'      => 'mtcextendee.com',
+    'version'     => '1.0.0',
     'services' => [
         'events'  => [],
         'forms'   => [

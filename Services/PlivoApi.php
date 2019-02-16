@@ -93,7 +93,7 @@ class PlivoApi extends AbstractSmsApi
                 );
                 return true;
             } catch (PlivoRestException $ex) {
-             return false;
+                return $ex->getErrorMessage();
             }
         }
     }
