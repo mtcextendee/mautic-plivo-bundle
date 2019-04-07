@@ -5,9 +5,6 @@ Integration is just another SMS transport along with core Twillio, Slooce SMS Tr
 
 For more info about Plivo follow https://www.plivo.com/
 
-- More plugin from Mautic Extendee Family  https://mtcextendee.com/plugins
-- Buy Mautic themes https://mtcextendee.com/themes
-
 ## Installation by console
 
 1. `composer require mtcextendee/mautic-plivo-bundle`
@@ -29,3 +26,8 @@ Manual installation is not allowed, because dependency on plivo-sdk library.
 ![image](https://user-images.githubusercontent.com/462477/55688093-16cba000-5975-11e9-852d-0a0d3e716ae9.png)
 
 6. For more info about text message Mautic support, follow docs https://www.mautic.org/docs/en/sms/index.html
+
+## More Mautic stuff
+
+- Plugins from Mautic Extendee Family  https://mtcextendee.com/plugins
+- Mautic themes https://mtcextendee.com/themes
