@@ -18,12 +18,12 @@ Manual installation is not allowed, because dependency on plivo-sdk library.
 2. You should see new Plivo integration
 3. Active integration and setup it
 
-![image](https://user-images.githubusercontent.com/462477/55688009-0961e600-5974-11e9-9e4f-2f06cdddaa4a.png)
+<img src="https://user-images.githubusercontent.com/462477/55688009-0961e600-5974-11e9-9e4f-2f06cdddaa4a.png" width="300" alt="">
 
 4. Authentication credentials can be found at http://manage.plivo.com/dashboard
 5. Then go to Configuration > Text message settings and select Plivo SMS as  default transport to use
 
-![image](https://user-images.githubusercontent.com/462477/55688093-16cba000-5975-11e9-852d-0a0d3e716ae9.png)
+<img src="https://user-images.githubusercontent.com/462477/55688093-16cba000-5975-11e9-852d-0a0d3e716ae9.png" width="300" alt="">
 
 6. For more info about text message Mautic support, follow docs https://www.mautic.org/docs/en/sms/index.html
 
