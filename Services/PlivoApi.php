@@ -90,7 +90,7 @@ class PlivoApi extends AbstractSmsApi
             $client = new RestClient($data['AUTH_ID'], $data['AUTH_TOKEN']);
             
             try {
-                $number = $this->sanitizeNumber($contact->getMobile());
+                $number = $this->sanitizeNumber($contact->getLeadPhoneNumber());
             } catch (NumberParseException $exception) {
                 return $exception->getMessage();
             }
