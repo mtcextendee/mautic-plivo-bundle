@@ -11,6 +11,9 @@
 
 namespace MauticPlugin\MauticPlivoBundle\Services;
 
+use libphonenumber\NumberParseException;
+use libphonenumber\PhoneNumberFormat;
+use libphonenumber\PhoneNumberUtil;
 use Guzzle\Http\Client;
 use Joomla\Http\Http;
 use Mautic\CoreBundle\Exception\BadConfigurationException;
@@ -85,10 +88,17 @@ class PlivoApi extends AbstractSmsApi
         if ($integration && $integration->getIntegrationSettings()->getIsPublished()) {
             $data   = $integration->getDecryptedApiKeys();
             $client = new RestClient($data['AUTH_ID'], $data['AUTH_TOKEN']);
+            
+            try {
+                $number = $this->sanitizeNumber($contact->getLeadPhoneNumber());
+            } catch (NumberParseException $exception) {
+                return $exception->getMessage();
+            }
+            
             try {
                 $response = $client->messages->create(
                     $data['sender_phone_number'],
-                    [$contact->getMobile()],
+                    [$number],
                     $content
                 );
 
@@ -103,5 +113,20 @@ class PlivoApi extends AbstractSmsApi
                 return false;
             }
         }
+    }
+        
+    /**
+     * @param string $number
+     *
+     * @return string
+     *
+     * @throws NumberParseException
+     */
+    private function sanitizeNumber($number)
+    {
+        $util = PhoneNumberUtil::getInstance();
+        $parsed = $util->parse($number, 'US');
+
+        return $util->format($parsed, PhoneNumberFormat::E164);
     }
 }
